@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Room</title>
+    <link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .form-check-label {
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    {% extends "bootstrap/base.html" %}
+    {% block content %}
+    <header class="mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4">Reserve a Room</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <form action="{{url_for('addbookingrecord')}}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required/>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="checkin">Check-In Date</label>
+                        <input type="date" id="checkin" name="checkin" class="form-control" required/>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="checkout">Check-Out Date</label>
+                        <input type="date" id="checkout" name="checkout" class="form-control" required/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="mb-2">Select Room Type:</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="roomtype" id="roomtype1" value="Single" checked>
+                        <label class="form-check-label" for="roomtype1">
+                            Single ($40/Night)
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="roomtype" id="roomtype2" value="Double">
+                        <label class="form-check-label" for="roomtype2">
+                            Double ($60/Night)
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="roomtype" id="roomtype3" value="Queen">
+                        <label class="form-check-label" for="roomtype3">
+                            Queen ($80/Night)
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="roomtype" id="roomtype4" value="King">
+                        <label class="form-check-label" for="roomtype4">
+                            King ($100/Night)
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="roomtype" id="roomtype5" value="Suite with Balcony">
+                        <label class="form-check-label" for="roomtype5">
+                            Suite with Balcony ($150/Night)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <button type="submit" class= "btn btn-primary btn-lg btn-block">Reserve Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    {% endblock %}
+    <script src= "https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

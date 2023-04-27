@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Panther Hotel</title>
+  </head>
+  <body>
+    {% extends "bootstrap/base.html" %}
+    {% block content %}
+    <div class="container my-5">
+      <div class="row justify-content-center">
+          <div class="col-lg-12 align-self-center text-center mb-4">
+              <img src="{{ url_for('static', filename='images/Logo.JPG') }}" />
+          </div>
+      </div>
+  </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-12 align-self-center text-center mb-4">
+          <h2>Welcome to Panther Hotel!</h2>
+          <p class="lead">We're delighted to have you here. How can we make your stay unforgettable?</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6 align-self-center text-right mb-2">
+          <a href="bookaroom">
+            <button type="button" class="btn btn-primary btn-lg">Book a Room</button>
+          </a>
+        </div>
+
+        <div class="col-lg-6 align-self-center text-left mb-2">
+          <a href="login">
+            <button type="button" class="btn btn-secondary btn-lg">Manager Log In</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
